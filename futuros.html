@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Futuros</title>
+    <link rel="stylesheet" href="./futuros.css">
+</head>
+<body>
+    <header>
+        <figure class="header--image-container">
+            <img src="./assets/logoFondoGrisRecortado.png" alt="">
+        </figure>
+        <article class="header--title-container">
+            <h1>Calculadora de Futuros</h1>
+            <p>Has tu plan de inversión en el mercado de futuros en tres pasos:</p>
+        </article>
+    </header>
+    <main>
+        <section class="main-select-asset">
+            <article class="main-select-asset--title-container">
+                <h2>1. Selecciona el activo</h2>
+                <p>Escoge el activo que más te llame la atención para conocer sus especificaciones, presta mucha atención a los margenes de operación</p>
+            </article>
+            <div class="main-select-asset--table-parameters-container">
+                <table>
+                    <tr class="fila-contrato">
+                        <td class="table-field-name">Tipo de contrato</td>
+                        <td>
+                            <select name="tipo-de-contrato" id="contratoid">
+                                <option value="futuros">Futuros</option>
+                                <option value="microfuturos">Microfuturos</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr class="fila-mercado">
+                        <td class="table-field-name">Mercado</td>
+                        <td><select name="mercado" id="mercadoid">
+                            <option value="indices">Indices</option>
+                            <option value="divisas">Divisas</option>
+                            <option value="energias">Energias</option>
+                            <option value="metales">Metales</option>
+                            <option value="bonos">Bonos</option>
+                            <option value="alimentos">Alimentos</option>
+                            <option value="carnes">Carnes</option>
+                        </select></td>
+                    </tr>
+                    <tr class="fila-activo">
+                        <td class="table-field-name">Activo financiero</td>
+                        <td><select name="activo-financiero" id="activoid">
+                            <option value="Micro E-mini S&P 500">Micro E-mini S&P 500</option>
+                            <option value="Micro E-mini Nasdaq-100">Micro E-mini Nasdaq-100</option>
+                            <option value="Micro E-mini Dow">Micro E-mini Dow</option>
+                            <option value="Micro E-mini Russell 2000">Micro E-mini Russell 2000</option>
+                            <option value="Micro-DAX">Micro-DAX</option>
+                            <option value="Micro-EURO STOXX50">Micro-EURO STOXX50</option>
+                        </select></td>
+                    </tr>
+                </table>
+            </div>
+            <div class="main-select-asset--button">
+                <button>Consultar<span></span></button>
+            </div>
+            <div class="main-select-asset--table-specifications-container">
+                <table class="table-ticket">
+                    <tr>
+                        <td class="table-field-name">Ticket General</td>
+                        <td>MES</td>
+                    </tr>
+                    <tr>
+                        <td class="table-field-name">Ticket M5</td>
+                        <td>MES</td>
+                    </tr>
+                </table>
+                <table class="table-margin">
+                    <tr>
+                        <td class="table-field-name">Margen maintenance</td>
+                        <td>$1120</td>
+                    </tr>
+                    <tr>
+                        <td class="table-field-name">Margen day trading</td>
+                        <td>$40</td>
+                    </tr>
+                </table>
+                <table class="table-tick">
+                    <tr>
+                        <td class="table-field-name">Medida tick</td>
+                        <td>0.25</td>
+                    </tr>
+                    <tr>
+                        <td class="table-field-name">Valor tick</td>
+                        <td>$1.25</td>
+                    </tr>
+                </table>
+            </div>
+        </section>
+        <section class="main-model-operation">
+            <article class="main-model-operation--title-container">
+                <h2>2. Modela tu operativa</h2>
+                <p>Define la frecuencia de tu trading y la distancia  promedio en tus operaciones, del punto de entrada al stop loss para el activo seleccionado</p>
+            </article>
+            <div class="main-model-operation--table-parameters-container">
+                <table>
+                    <tr class="fila-estilo">
+                        <td class="table-field-name">Estilo de trading</td>
+                        <td>
+                            <select name="estilo-de-trading" id="estiloid">
+                                <option value="Swing trading">Swing trading</option>
+                                <option value="Day trading">Day trading</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr class="fila-operaciones">
+                        <td class="table-field-name">Operaciones/mes</td>
+                        <td>
+                            <input id="operacionesId" type="number">
+                        </td>
+                            
+                    </tr>
+                    <tr class="fila-puntos">
+                        <td class="table-field-name">Puntos/contrato</td>
+                        <td>
+                            <input id="puntosId" type="number">
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="main-model-operation--button">
+                <button id="btnModelar" >Modelar</button>
+            </div>
+            <div class="main-model-operation--table-modeling-container">
+                <table>
+                    <tr>
+                        <td class="table-field-name">Ticks/contrato</td>
+                        <td id="ticksContratoId"></td>
+                    </tr>
+                    <tr>
+                        <td class="table-field-name">Pérdida/contrato</td>
+                        <td id="perdidaContratoId">$600</td>
+                    </tr>
+                    <tr>
+                        <td class="table-field-name">Pérdida/mes</td>
+                        <td id="perdidaMesId">$2400</td>
+                    </tr>
+                </table>
+            </div>
+        </section>
+        <section class="main-capital-management">
+            <article class="main-capital-management--title-container">
+                <h2>3. Gestiona tu capital</h2>
+                <p>Define el capital con el que cuentas para invertir, tu perfil de riesgo y la relación riesgo-beneficio que esperas obtener en cada operación</p>
+            </article>
+            <div class="main-capital-management--table-parameters-container">
+                <table>
+                    <tr>
+                        <td class="table-field-name">Capital de inversión</td>
+                        <td>$5000</td>
+                    </tr>
+                    <tr>
+                        <td class="table-field-name">Perfil de riesgo</td>
+                        <td>Arriesgado</td>
+                    </tr>
+                    <tr>
+                        <td class="table-field-name">Riesgo-beneficio</td>
+                        <td>2:1</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="main-capital-management--button">
+                <button>Simular<span></span></button>
+            </div>
+            <div class="main-capital-management--table-projection-container">
+                <table class="table-risk">
+                    <tr>
+                        <td class="table-field-name">Riesgo/mes</td>
+                        <td>50%</td>
+                    </tr>
+                    <tr>
+                        <td class="table-field-name">Pérdida/mes</td>
+                        <td>$2500</td>
+                    </tr>
+                    <tr>
+                        <td class="table-field-name">Riesgo/operación</td>
+                        <td>12.5%</td>
+                    </tr>
+                    <tr>
+                        <td class="table-field-name">Pérdida/operación</td>
+                        <td>$625</td>
+                    </tr>
+                </table>
+                <table class="table-revenue">
+                    <tr>
+                        <td class="table-field-name">Ganancia/mes</td>
+                        <td>$5000</td>
+                    </tr>
+                    <tr>
+                        <td class="table-field-name">ROI/mes</td>
+                        <td>100%</td>
+                    </tr>
+                    <tr>
+                        <td class="table-field-name">Ganancia/operación</td>
+                        <td>$1250</td>
+                    </tr>
+                    <tr>
+                        <td class="table-field-name">ROI/operación</td>
+                        <td>25.0%</td>
+                    </tr>
+                </table>
+            </div>
+        </section>
+        <section class="main-recommendations">
+            <div class="main-recommendations--button">
+                <button>Recomendación<span></span></button>
+            </div>
+            <article class="main-recommendations--title-container">
+                <p>Aumenta el capital, disminuye el riesgo o cambia de activo. Estas corriendo más riesgo del que puedes correr. </p>
+            </article>
+            <figure class="main-recommendations--image-container">
+                <div class="nothing"></div>
+                <div class="image">
+                    <img src="./assets/iconoBorrar.png" alt="ícono de borrar">
+                </div>
+            </figure>
+        </section>
+    </main>
+    
+    <script src="./dataBase.js"></script>
+    <!--<script src="./futuros.js"></script>-->
+    <script src="./manipulacionDom.js"></script>    
+</body>
+</html>

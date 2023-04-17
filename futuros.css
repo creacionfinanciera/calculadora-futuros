@@ -1,0 +1,401 @@
+/* General */
+:root {
+    /* Declaramos las variables de los colores del logo */
+    --gris-fondo-logo: #E6E8E7;
+    --gris-oscuro-logo: #989CA8;
+    --griz-azul-logo: #444C66;
+    --azul-letras-logo: #1C1C41;
+    --verde-icono-logo: #1B524B;
+
+    /* Declaramos las variables de los colores de marca */
+    --azul-primario-marca: #262262;
+    --verde-primario-marca: #006838;
+    --azul-oscuro-secundario-marca: #121641;
+    --azul-claro-secundario-marca: #3E438B;
+    --verde-oscuro-secundario-marca: #122B17;
+    --verde-claro-secundario-marca: #59B290;
+    --verde-oscuro-secundario-luis: #024B29;
+    --rojo-oscuro-secundario-luis: #8E0915;
+    --negro-luis: #000000;
+    --blanco-luis: #FFFFFF;
+}
+* {
+    /* Quitamos los estilos por defecto */
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+html {
+    /* Organizamos el estandar rem para los pixeles */
+    font-size: 62.5%;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Header CALCULADORA DE FUTUROS */
+header {
+    /* para poder manipular los contenedores a continuación, pero aún no entiendo muy bien su funcionalidad */
+    position: relative;
+    /* separamos en dos contenedores diferentes las dos etiquetas img y div que hacen parte del header, una al lado de la otra */
+    display: flex;
+    /* colocamos las dos etiquetas en columna, una sobre la otra */
+    flex-direction: column;
+    /* no entiendo el efecto de este comandos, no hay cambios aparentes */
+    justify-content: center;
+    /* que el header sea del 100% de largo, dependiendo de la pantalla */
+    width: 100%;
+    /* el largo de la pantalla no va a ser menor que 320px, que es el largo de los celulares */
+    min-width: 320px;
+    /* el alto del header será de 334px */
+    height: 184px;
+    /* centramos horizontalmente el texto de todo el header */
+    text-align: center;    
+}
+.header--image-container {
+    /* le colocamos el color de fondo al contenedor de la imagen */
+    background: var(--gris-fondo-logo);
+    height: 95px;
+    
+}
+header img {
+    /* le damos el largo y la altura que debe llevar el logo */
+    width: 200px;
+    height: 95px;
+    /* cómo estamos utilizando display flex, esta es la forma de poder centrar el logo horizontalmente */
+    /*align-self: center;*/
+}
+.header--title-container {
+    padding: 20px 10px 10px 10px;
+}
+.header--title-container h1 {
+    font-size: 1.5rem;
+    color: var(--azul-oscuro-secundario-marca);
+    margin: 5px;
+}
+.header--title-container p {
+    font-size: 1.2rem;
+    color: var(--negro-luis);
+    margin: 5px 10px 5px 10px;
+}
+
+/* Sección SELECCIONA EL ACTIVO */
+.main-select-asset {
+    padding: 0 10px 10px 10px;
+}
+.main-select-asset--title-container {   
+    background: var(--azul-oscuro-secundario-marca);
+    color: var(--blanco-luis);
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;     
+}
+.main-select-asset--title-container h2 {
+    font-weight: 600;
+}
+.main-select-asset--title-container p {
+    font-size: 1.1rem;
+    padding-left: 17px;
+    padding-top: 3px;
+}
+.main-select-asset--table-parameters-container {
+    padding: 10px;
+}
+.main-select-asset--table-parameters-container table {
+    /* para que las dimensiones de la tabla sean el 100% de las dimensiones del contenedor, así se da forma a las columnas */
+    width: 100%;
+    height: 100%;
+}
+.main-select-asset--table-parameters-container td {
+    /* que cada uno de los campos sea del 50%, entonces se reparten en largos iguales en la fila */
+    width: 50%;
+    /* tamaño de letra de la tabla */
+    font-size: 1.2rem;
+    /* grosor de la fuente de la tabla */       
+    font-weight: 500;
+    /* interlineado de la fuente */
+    line-height: 1.9rem;
+    /* color de la fuente */
+    color: var(--negro-luis);
+    /* color de fondo de la tabla */
+    background-color: var(--gris-fondo-logo);
+    /* para ampliar verticalmente la tabla y darle sangria horizontal */
+    padding: 3px 5px;
+}
+.main-select-asset--table-parameters-container .table-field-name {
+    font-weight: bold;
+}
+.main-select-asset--button {
+    padding: 10px 90px;
+}
+.main-select-asset--button button {
+    width: 100%;
+    height: 25px;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    background-color: rgba(67, 75, 77, 0.8 );
+    color: var(--blanco-luis);
+    border: none;
+    
+}
+.main-select-asset--table-specifications-container {
+    padding: 10px;
+    
+}
+.main-select-asset--table-specifications-container table {
+    /* para que las dimensiones de la tabla sean el 100% de las dimensiones del contenedor, así se da forma a las columnas */
+    width: 100%;
+    height: 100%;    
+}
+.table-margin {
+    margin-top: 10px;
+}
+.table-tick {
+    margin-top: 10px;
+}
+
+.main-select-asset--table-specifications-container td {
+    /* que cada uno de los campos sea del 50%, entonces se reparten en largos iguales en la fila */
+    width: 50%;
+    /* tamaño de letra de la tabla */
+    font-size: 1.2rem;
+    /* grosor de la fuente de la tabla */       
+    font-weight: 500;
+    /* interlineado de la fuente */
+    line-height: 1.9rem;
+    /* color de la fuente */
+    color: var(--negro-luis);
+    /* color de fondo de la tabla */
+    background-color: var(--gris-fondo-logo);
+    /* para ampliar verticalmente la tabla y darle sangria horizontal */
+    padding: 3px 5px;
+}
+.main-select-asset--table-specifications-container .table-field-name {
+    font-weight: bold;
+}
+
+/* Sección MODELA TU OPERATIVA */
+.main-model-operation {
+    padding: 0 10px 10px 10px;
+}
+.main-model-operation--title-container {
+    background: var(--verde-oscuro-secundario-luis);
+    color: var(--blanco-luis);
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;    
+}
+.main-model-operation--title-container h2 {
+    font-weight: 600;
+}
+.main-model-operation--title-container p {
+    font-size: 1.1rem;
+    padding-left: 17px;
+    padding-top: 3px;
+}
+.main-model-operation--table-parameters-container{
+    padding: 10px;
+}
+.main-model-operation--table-parameters-container table {
+    /* para que las dimensiones de la tabla sean el 100% de las dimensiones del contenedor, así se da forma a las columnas */
+    width: 100%;
+    height: 100%;    
+}
+.main-model-operation--table-parameters-container td {
+    /* que cada uno de los campos sea del 50%, entonces se reparten en largos iguales en la fila */
+    width: 50%;
+    /* tamaño de letra de la tabla */
+    font-size: 1.2rem;
+    /* grosor de la fuente de la tabla */       
+    font-weight: 500;
+    /* interlineado de la fuente */
+    line-height: 1.9rem;
+    /* color de la fuente */
+    color: var(--negro-luis);
+    /* color de fondo de la tabla */
+    background-color: var(--gris-fondo-logo);
+    /* para ampliar verticalmente la tabla y darle sangria horizontal */
+    padding: 3px 5px;
+}
+.main-model-operation--table-parameters-container .table-field-name {
+    font-weight: bold;
+}
+.main-model-operation--button {
+    padding: 10px 90px;
+}
+.main-model-operation--button button {    
+    width: 100%;
+    height: 25px;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    background-color: rgba(67, 75, 77, 0.8 );
+    color: var(--blanco-luis);
+    border: none;
+}
+
+.main-model-operation--table-modeling-container {
+    padding: 10px;
+}
+.main-model-operation--table-modeling-container table {
+    /* para que las dimensiones de la tabla sean el 100% de las dimensiones del contenedor, así se da forma a las columnas */
+    width: 100%;
+    height: 100%;    
+}
+.main-model-operation--table-modeling-container td {
+    /* que cada uno de los campos sea del 50%, entonces se reparten en largos iguales en la fila */
+    width: 50%;
+    /* tamaño de letra de la tabla */
+    font-size: 1.2rem;
+    /* grosor de la fuente de la tabla */       
+    font-weight: 500;
+    /* interlineado de la fuente */
+    line-height: 1.9rem;
+    /* color de la fuente */
+    color: var(--negro-luis);
+    /* color de fondo de la tabla */
+    background-color: var(--gris-fondo-logo);
+    /* para ampliar verticalmente la tabla y darle sangria horizontal */
+    padding: 3px 5px;
+}
+.main-model-operation--table-modeling-container .table-field-name {
+    font-weight: bold;
+}
+
+/* Sección DEFINE TU GESTION DE CAPITAL */
+.main-capital-management {
+    padding: 0 10px 0 10px;    
+}
+.main-capital-management--title-container {
+    background: var(--rojo-oscuro-secundario-luis);
+    color: var(--blanco-luis);
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+}
+.main-capital-management--title-container h2 {
+    font-weight: 600;
+}
+.main-capital-management--title-container p {
+    font-size: 1.1rem;
+    padding-left: 17px;
+    padding-top: 3px;
+}
+.main-capital-management--table-parameters-container {
+    padding: 10px;
+}
+.main-capital-management--table-parameters-container table {
+    /* para que las dimensiones de la tabla sean el 100% de las dimensiones del contenedor, así se da forma a las columnas */
+    width: 100%;
+    height: 100%;    
+}
+.main-capital-management--table-parameters-container td {
+    /* que cada uno de los campos sea del 50%, entonces se reparten en largos iguales en la fila */
+    width: 50%;
+    /* tamaño de letra de la tabla */
+    font-size: 1.2rem;
+    /* grosor de la fuente de la tabla */       
+    font-weight: 500;
+    /* interlineado de la fuente */
+    line-height: 1.9rem;
+    /* color de la fuente */
+    color: var(--negro-luis);
+    /* color de fondo de la tabla */
+    background-color: var(--gris-fondo-logo);
+    /* para ampliar verticalmente la tabla y darle sangria horizontal */
+    padding: 3px 5px;
+}
+.main-capital-management--table-parameters-container .table-field-name {
+    font-weight: bold;
+}
+.main-capital-management--button {
+    padding: 10px 90px;
+}
+.main-capital-management--button button {
+    width: 100%;
+    height: 25px;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    background-color: rgba(67, 75, 77, 0.8 );
+    color: var(--blanco-luis);
+    border: none;
+}
+.main-capital-management--table-projection-container {
+    padding: 10px;
+}
+.main-capital-management--table-projection-container table {
+    /* para que las dimensiones de la tabla sean el 100% de las dimensiones del contenedor, así se da forma a las columnas */
+    width: 100%;
+    height: 100%;    
+}
+.table-revenue {
+    margin-top: 10px;
+}
+.main-capital-management--table-projection-container td {
+    /* que cada uno de los campos sea del 50%, entonces se reparten en largos iguales en la fila */
+    width: 50%;
+    /* tamaño de letra de la tabla */
+    font-size: 1.2rem;
+    /* grosor de la fuente de la tabla */       
+    font-weight: 500;
+    /* interlineado de la fuente */
+    line-height: 1.9rem;
+    /* color de la fuente */
+    color: var(--negro-luis);
+    /* color de fondo de la tabla */
+    background-color: var(--gris-fondo-logo);
+    /* para ampliar verticalmente la tabla y darle sangria horizontal */
+    padding: 3px 5px;
+}
+.main-capital-management--table-projection-container .table-field-name {
+    font-weight: bold;
+}
+
+/* Sección RECOMENDACIONES */
+.main-recommendations {
+    padding: 0 10px 30px 10px;
+    margin-left: 10px;
+    margin-right: 10px;    
+}
+.main-recommendations--button {
+    padding: 10px 70px;
+    margin-bottom: 10px;
+}
+.main-recommendations--button button {
+    width: 100%;
+    height: 25px;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    background-color: rgba(67, 75, 77, 0.8 );
+    color: var(--blanco-luis);
+    border: none;
+}
+.main-recommendations--title-container {
+    background: var(--gris-fondo-logo);
+    padding: 10px;
+    font-size: 1.2rem;
+    border-radius: 5px;
+}
+.main-recommendations--image-container {
+    display: flex;
+    width: 100%;
+    height: 40px;
+    padding-top: 10px;    
+}
+.main-recommendations--image-container .nothing {
+    display: flex;
+    width: 90%;
+    /* esta es para centrar horizontalmente contenido en el contenedor */
+    justify-content: center;
+    /* esta es para centrar verticalmente */
+    align-items: center;
+}
+
+
+.main-recommendations--image-container .image {
+    display: flex;
+    justify-content: center;    
+}
+
+
